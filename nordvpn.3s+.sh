@@ -113,4 +113,4 @@ fi
 ###################################################
 
 echo "---"
-echo "My NordVPN Account | iconName=avatar-default href='https://$DASHBOARD_URL'"
+echo "My NordVPN Account | iconName=avatar-default href='$DASHBOARD_URL'"
