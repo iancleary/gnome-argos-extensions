@@ -20,7 +20,7 @@ HUB_USER_PROFILE_URL="https://hub.docker.com/u/iancleary/" # change to your hub
 # you could create a list of users you follow, whatever!
 
 # Local filename of ICON
-ICON_NAME=Docker-R-Logo-08-2018-Monochomatic-RGB_Moby-x1.png
+ICON_NAME=Docker-R-Logo-08-2018-Monochomatic-RGB_Moby-x2.png
 
 #URL of icon to if no local file exists
 ICON_URL="https://www.docker.com/sites/default/files/d8/Docker-R-Logo-08-2018-Monochomatic-RGB_Moby-x1.png"
@@ -38,18 +38,26 @@ fi
 echo "Docker | image='$DOCKER_ICON' imageWidth=20"
 
 
-dockerd_status="$(systemctl show --property ActiveState docker)"
+# dockerd_status="$(systemctl show --property ActiveState docker)"
 
-# ActiveState=active is the output of dockerd_status, parse string to get "active"
-connected_status=${dockerd_status:12:6}
-# echo "${connected_status}" -> "active" or "inactive"
+# # ActiveState=active is the output of dockerd_status, parse string to get "active"
+# connected_status=${dockerd_status:12:6}
+# # echo "${connected_status}" -> "active" or "inactive"
+
+docker_state=$(docker info >/dev/null 2>&1)
+if [[ $? -ne 0 ]]; then
+    echo "Docker does not seem to be running, run it first and retry"
+    connected_status="inactive"
+else
+	connected_status="active"
+fi
 
 echo "---";
 
 # Change menu by connection status
 if [ "$connected_status" == "active" ]; then
 	docker_version_output="$(docker --version)"
-	docker_images_output="$(docker container ls)"
+	docker_images_output="$(docker image ls)"
 	docker_container_ls_output="$(docker container ls)"
 
 	###################################################
