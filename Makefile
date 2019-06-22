@@ -20,5 +20,5 @@ update: ## Copy the files in this folder to the ARGOS folder
 	# use rsync rather than cp -r to exclude folders
 	rsync -rv --exclude=.gitignore --exclude=.vscode --exclude=.git --exclude=Makefile . $(ARGOS)
 
-clean:
+clean: ## removes all extensions by deleting the ARGOS folder
 	rm -rf $(ARGOS)/
