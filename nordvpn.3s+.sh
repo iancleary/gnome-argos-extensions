@@ -57,7 +57,7 @@ connected_status=${NordVPN_status_output:8:9}
 
 # Render the button based upon connection status
 # I opted for the icon and no image; up to you
-if [ "$connected_status" == "connected" ]; then
+if [ "$connected_status" == "Connected" ]; then
 	#echo "NordVPN On| image='$NORDVPN_ICON' iconName=security-high imageWidth=20"
 	echo "NordVPN | image='$NORDVPN_ICON' iconName=security-high imageWidth=20"
 else
