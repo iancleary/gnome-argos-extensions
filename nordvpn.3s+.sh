@@ -80,8 +80,6 @@ done
 # disconnect, login, logout
 # for disconnect's icon, I went back and forth between security-low and process-stop
 echo "nordvpn disconnect  | iconName=security-low bash='nordvpn disconnect' terminal=false"
-echo "nordvpn login (terminal) | iconName=dialog-password bash='nordvpn login' terminal=true"
-echo "nordvpn logout (terminal) | iconName=dialog-password bash='nordvpn logout' terminal=true"
 # End Menu Section
 
 ###################################################
@@ -108,9 +106,16 @@ if [ "$connected_status" == "connected" ]; then
 	echo "${NordVPN_settings_output}"
 fi
 
+# Wireguard
+## https://support.nordvpn.com/#/path/1362931332
+echo "nordvpn wireguard (need to reconnect to enable) | iconName=dialog-password bash='nordvpn set technology nordlynx' terminal=true"
+echo "nordvpn OpenVPN (reconnects) | iconName=applications-internet bash='nordvpn set technology OpenVPN' terminal=true"
+
 ###################################################
 ############ Link to Account Dashboard ############
 ###################################################
 
 echo "---"
 echo "My NordVPN Account | iconName=avatar-default href='$DASHBOARD_URL'"
+echo "nordvpn login (terminal) | iconName=dialog-password bash='nordvpn login' terminal=true"
+echo "nordvpn logout (terminal) | iconName=dialog-password bash='nordvpn logout' terminal=true"
