@@ -108,8 +108,8 @@ fi
 
 # Wireguard
 ## https://support.nordvpn.com/#/path/1362931332
-echo "nordvpn wireguard (need to reconnect to enable) | iconName=dialog-password bash='nordvpn set technology nordlynx' terminal=true"
-echo "nordvpn OpenVPN (reconnects) | iconName=applications-internet bash='nordvpn set technology OpenVPN' terminal=true"
+echo "nordvpn wireguard (reconnect to enable) | iconName=applications-internet bash='nordvpn set technology nordlynx' terminal=false"
+echo "nordvpn OpenVPN (reconnect to enable) | iconName=applications-internet bash='nordvpn set technology OpenVPN' terminal=false"
 
 ###################################################
 ############ Link to Account Dashboard ############
