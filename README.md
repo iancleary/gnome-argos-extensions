@@ -1,4 +1,4 @@
-# gnome-argos-extensions
+# ARCHIVED (gnome-argos-extensions)
 
 My personal Gnome shell extensions scripts designed to be used with [argos](https://github.com/p-e-w/argos) Gnome Extension.
 
